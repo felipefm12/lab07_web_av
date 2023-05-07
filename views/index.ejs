@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= titulos[0] %></title>
+  <!-- Agregamos los enlaces a los estilos de Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><%= titulos[1] %></h1>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="btn btn-primary mr-2" href="/ver_videojuegos"><%= titulos[2] %></a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-success" href="/agregar_videojuegos"><%= titulos[3] %></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

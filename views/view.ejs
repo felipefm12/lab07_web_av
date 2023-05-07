@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Videojuegos</title>
+    <!-- Agregamos los enlaces al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <style>
+        img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ver Videojuegos</h1>
+        <% if (juegos.length === 0) { %>
+            <p>No se han encontrado videojuegos.</p>
+        <% } else { %>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Producción</th>
+                        <th>Año de lanzamiento</th>
+                        <th>Género</th>
+                        <th>Imagen</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% juegos.forEach(function(juego) { %>
+                        <tr>
+                            <td><%= juego.titulo %></td>
+                            <td><%= juego.produccion %></td>
+                            <td><%= juego.fecha_lanzamiento %></td>
+                            <td><%= juego.genero %></td>
+                            <td><img src="<%= juego.imagen %>" class="img-fluid"></td>
+                            <td><%= juego.descripcion %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } %>
+        <div class="btn-group">
+            <a href="/" class="btn btn-primary mr-2">Inicio</a>
+            <a href="/agregar_videojuegos" class="btn btn-success">Agregar Videojuego</a>
+        </div>
+    </div>
+    <!-- Agregamos los scripts de Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

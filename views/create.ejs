@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Videojuego</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-5">Agregar Videojuego</h1>
+        <% if (juego.errors) { %>
+            <div class="alert alert-danger">
+                <% juego.errors.forEach(function(error) { %>
+                    <p><%= error %></p>
+                <% }); %>
+            </div>
+        <% } %>
+        <form action="/envio" method="POST">
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" value="<%= juego.titulo %>" required>
+            </div>
+            <div class="form-group">
+                <label for="produccion">Producción</label>
+                <input type="text" class="form-control" id="produccion" name="produccion" value="<%= juego.produccion %>" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_lanzamiento">Año de lanzamiento</label>
+                <input type="number" class="form-control" id="fecha_lanzamiento" name="fecha_lanzamiento" value="<%= juego.fecha_lanzamiento %>" required>
+            </div>
+            <div class="form-group">
+                <label for="genero">Género</label>
+                <input type="text" class="form-control" id="genero" name="genero" value="<%= juego.genero %>" required>
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input type="text" class="form-control" id="imagen" name="imagen" value="<%= juego.imagen %>" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" required><%= juego.descripcion %></textarea>
+            </div>
+            <div class="btn-group">
+                <a href="/" class="btn btn-primary mr-2">Volver a Inicio</a>
+                <button type="submit" class="btn btn-success">Agregar</button>
+            </div>
+            
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
